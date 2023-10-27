@@ -8,20 +8,11 @@ const questions = [
     name: "shape",
     message: "Choose a shape",
     choices: ["circle", "square", "triangle",],  
-    when(answers){
-        return answers
-        if(circle){
-            
-        }
-     }
 },
 {
     type: "input",
     name: "circleChoice",
     message: "What is the radius of your circle?",
-     when(answers){
-        return answers.circle
-     }
 },
 {
     type: "input",
