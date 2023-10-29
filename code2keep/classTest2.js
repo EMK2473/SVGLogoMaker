@@ -37,7 +37,6 @@ class Triangle extends Shape {
 const newShape2 = new Circle('0000ff', 'SVG', '00FF00', 10, this.shape);
 const newShape1 = new Rectangle('00ff00', 'SVG', '00FF00', 10, 10, this.shape);
 const newShape = new Triangle('ff0000', 'SVG', '00FF00', 10, 10, this.shape);
-
 console.log('Triangle:', newShape);
 console.log('Rectangle:', newShape1);
 console.log('Circle:', newShape2);

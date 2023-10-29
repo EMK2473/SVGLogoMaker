@@ -101,11 +101,9 @@ const questions = [
     },
 }
 ];
-
 function writeToFile(fileName, data) {
   return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 }
-
 function init() {
   inquirer.prompt(questions).then((responses) => {
     console.log(responses);
