@@ -1,7 +1,7 @@
 const fs = require(`fs`);
 const path = require(`path`);
 const inquirer = require(`inquirer`);
-const { Circle, Square, Triangle } = require('./generateShape.js');
+const { Circle, Square, Triangle } = require('./lib/generateShape.js');
 const questions = [
     {
       type: "list",
@@ -305,7 +305,7 @@ function init() {
     console.log(responses);
     console.log(`It Worked!`);
     console.log(`SVG LOGO and file Generated!`);
-    writeToFile("../examples/logo.html", generateShape({ ...responses }));
+    writeToFile("./examples/logo.svg", generateShape({ ...responses }));
   });
 }
 init();
