@@ -85,14 +85,7 @@ const questions = [
     message:
       "triangle points (6 required) \r\n format: `x,y x,y x,y`\r\n recommended:`150,18 244,182 56,182`\r\n",
     when: (answers) => answers.shape === "triangle",
-    validate(input) {
-      if (/^(\d{1,3},\d{1,3} ){2}\d{1,3},\d{1,3}$/.test(input)) {
-        return true;
-      }
-      throw Error(
-        "Please provide points (6 required).\r\nrecommended:`150,18 244,182 56,182`\r\nformat: `x,y x,y x,y"
-      );
-    },
+    validate: valPoints,
   },
   //
   //
@@ -160,7 +153,8 @@ const questions = [
     validate: valInput3Nums,
   },
 ];
-// user input validation function
+// regex functions to 
+// validate user input
 function valInput3Nums(input) {
   if (/^[0-9]{1,3}$/.test(input)) {
     return true;
@@ -178,11 +172,19 @@ function valHexNum(input) {
 function valLetter3(input){
     if (/^[A-Za-z]{1,3}$/.test(input)) {
       return true;
-    }
+    } // must be 3 letters else error
     throw Error(
       "Please provide a valid text input for your shape. \r\n Max 3 characters \r\n May only contain (0-9)"
     );
 }
+function valPoints(input){
+    if (/^(\d{1,3},\d{1,3} ){2}\d{1,3},\d{1,3}$/.test(input)) {
+      return true;
+    } // must be 6 numbers in sequence
+    throw Error(
+      "Please provide points (6 required).\r\nrecommended:`150,18 244,182 56,182`\r\nformat: `x,y x,y x,y"
+    );
+  }
 // shape generation switch cases
 function generateShape(responses) {
   let shape;
@@ -250,4 +252,5 @@ function runIt() {
     writeToFile("./examples/logo.svg", generateShape({ ...responses }));
   });
 }
+// let's go and
 runIt();
