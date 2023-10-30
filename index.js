@@ -219,7 +219,6 @@ const questions = [
     },
   }
   ];
-
 function generateShape(responses) {
     let shape;
     switch (responses.shape) {
@@ -277,7 +276,7 @@ function generateShape(responses) {
 function writeToFile(fileName, data) {
   return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 }
-function init() {
+function runIt() {
   inquirer.prompt(questions).then((responses) => {
     console.log(responses);
     console.log(`It Worked!`);
@@ -285,4 +284,4 @@ function init() {
     writeToFile("./examples/logo.svg", generateShape({ ...responses }));
   });
 }
-init();
+runIt();
