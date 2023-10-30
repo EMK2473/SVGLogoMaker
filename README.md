@@ -37,7 +37,7 @@
   npm run test
 
   ## Link to Video Instructions
-  https://drive.google.com/file/d/14_WdimHO8REPdgeeClWmb1ygPJfLZ60B/view
+  https://drive.google.com/file/d/14tE6Vgh_i9DLuf9EcZgM415deBJsS4fz/view
 
   ## Screenshot
   ![screenshot of circle logo](./examples/exampleLogoCircle.png)
