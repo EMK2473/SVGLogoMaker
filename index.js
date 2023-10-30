@@ -112,37 +112,15 @@ const questions = [
     //
     {
       type: "input",
-      name: "triA",
-      message: "triangle area \r\n",
+      name: "triPoints",
+      message: "triangle points (6 required) \r\n format: `x,y x,y x,y`\r\n recommended:`150,18 244,182 56,182`\r\n",
       when: (answers) => answers.shape === "triangle",
       validate(input) {
-          if (/^[0-9]{1,3}$/.test(input)) {
-            return true;
-          }
-          throw Error('Please provide a valid base for your triangle. \r\n Max 3 characters \r\n May only contain (0-9)');
-        },
-    },{
-      type: "input",
-      name: "triSL",
-      message: "triangle side length \r\n",
-      when: (answers) => answers.shape === "triangle",
-      validate(input) {
-          if (/^[0-9]{1,3}$/.test(input)) {
-            return true;
-          }
-          throw Error('Please provide a valid side_length for your triangle. \r\n Max 3 characters \r\n May only contain (0-9)');
-        },
-    },{
-      type: "input",
-      name: "triB",
-      message: "triangle base value \r\n",
-      when: (answers) => answers.shape === "triangle",
-      validate(input) {
-          if (/^[0-9]{1,3}$/.test(input)) {
-            return true;
-          }
-          throw Error('Please provide a valid base for your triangle. \r\n Max 3 characters \r\n May only contain (0-9)');
-        },
+        if (/^(\d{1,3},\d{1,3} ){2}\d{1,3},\d{1,3}$/.test(input)) {
+          return true;
+        }
+        throw Error('Please provide points (6 required).\r\nrecommended:`150,18 244,182 56,182`\r\nformat: `a,b c,d e,f');
+      },
     },
     //
     //
@@ -204,7 +182,7 @@ const questions = [
   },{
     type: 'input',
     name: 'textY',
-    message: 'text y plot value \r\n recommended value: 125\r\n',
+    message: 'text y plot value \r\n recommended value: 125 (circle, square)\r\nrecommended value: 160(triangle)',
     validate(input) {
       if (/^[0-9]{1,3}$/.test(input)) {
         return true;
@@ -283,10 +261,9 @@ function generateShape(responses) {
               responses.text, 
               responses.textHexValue, 
               responses.textSize, 
-              responses.triB, 
-              responses.triH,
               responses.svgW,
               responses.svgH,
+              responses.triPoints,
               responses.textX,
               responses.textY,
             );

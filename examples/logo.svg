@@ -1,6 +1,6 @@
 
-      <svg width="299" height="199" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect x="49" y="1" width="199" height="199" fill="#111111" stroke="#111111" stroke-width="5"/>></rect>
-        <text x="149" y="124" font-size="59" text-anchor="middle" fill="#222222">emk</text>
+      <svg width="300" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="150,18 244,182 56,182" fill="#008000" stroke="#008000" stroke-width="5"/>
+        <text x="150" y="160" font-size="60" text-anchor="middle" fill="#FFA500">SVG</text>
       </svg>
     
