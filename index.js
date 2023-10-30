@@ -149,6 +149,7 @@ const questions = [
     validate: valNumThree
   }
   ];
+
   function valNumThree(input){
     if (/^[0-9]{1,3}$/.test(input)) {
       return true;
@@ -162,6 +163,7 @@ const questions = [
     }// must be hex values else error
     throw Error('Please provide a hexidecimal key. \r\n Max 6 characters \r\n Only (0-9, A-F, a-f)');
   }
+
 function generateShape(responses) {
     let shape;
     switch (responses.shape) {
@@ -218,6 +220,7 @@ function generateShape(responses) {
 function writeToFile(fileName, data) {
   return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 }
+
 function runIt() {
   inquirer.prompt(questions).then((responses) => {
     console.log(responses);
@@ -226,6 +229,7 @@ function runIt() {
     writeToFile("./examples/logo.svg", generateShape({ ...responses }));
   });
 }
+
 runIt();
 
 
