@@ -4,7 +4,7 @@ const inquirer = require("inquirer");
 const questions = require("./lib/Questions/question");
 const generateShape = require("./lib/Questions/generateShapeModule");
 
-// write to file functions
+// append svg to file 
 function writeToFile(fileName, data) {
   return fs.appendFileSync(path.join(process.cwd(), fileName), data);
 };
@@ -14,7 +14,7 @@ function runIt() {
     console.log(responses);
     console.log(`It Worked!`);
     console.log(`SVG LOGO and file Generated!`);
-    writeToFile("./examples/logo.svg", generateShape({ ...responses })) &&
+    writeToFile("./examples/logo.svg", generateShape({ ...responses }));
     writeToFile("./examples/logo.html", generateShape({ ...responses }));
   });
 };
