@@ -14,7 +14,8 @@ function runIt() {
     console.log(responses);
     console.log(`It Worked!`);
     console.log(`SVG LOGO and file Generated!`);
-    writeToFile("./examples/logo.svg", generateShape({ ...responses }));
+    writeToFile("./examples/logo.svg", generateShape({ ...responses })) &&
+    writeToFile("./examples/logo.html", generateShape({ ...responses }));
   });
 };
 // let's go and
