@@ -6,7 +6,7 @@ const generateShape = require("./lib/Questions/generateShapeModule");
 
 // write to file functions
 function writeToFile(fileName, data) {
-  return fs.writeFileSync(path.join(process.cwd(), fileName), data);
+  return fs.appendFileSync(path.join(process.cwd(), fileName), data);
 };
 // run the page on call
 function runIt() {
